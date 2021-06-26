@@ -1,0 +1,18 @@
+<p id='api'></p>
+<script type='text/javascript'>
+    let obj=fetch('https://api.covid19api.com/summary'
+)
+
+obj
+.then(resp=>{
+    // console.log(resp),
+    return resp.json()
+})
+.then(data=>{
+    const actualdata=data.Countries[76];
+    document.getElementById('api').innerHTML=`My name of country is ${actualdata.Country} and recovered cases is ${actualdata.TotalRecovered}`
+})
+.catch((error)=>console.error(error)
+)
+</script>
+
